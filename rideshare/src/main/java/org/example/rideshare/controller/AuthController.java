@@ -34,11 +34,11 @@ public class AuthController {
 
     static class ErrorResponse {
         public String message;
-        
+
         public ErrorResponse(String message) {
             this.message = message;
         }
-        
+
         public String getMessage() {
             return message;
         }
