@@ -25,6 +25,16 @@ public class SecurityConfig {
     @Autowired
     private JwtAuthFilter jwtAuthFilter;
 
+    /**
+     * Configure the security filter chain for the application
+     * 
+     * - Enables CORS with a permissive configuration for development
+     * - Disables CSRF (stateless REST API)
+     * - Uses stateless session management (JWT tokens)
+     * - Permits unauthenticated access to /api/auth/** endpoints
+     * - Requires authentication for all other endpoints
+     * - Registers JwtAuthFilter before UsernamePasswordAuthenticationFilter
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
