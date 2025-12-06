@@ -2,6 +2,7 @@ package org.example.rideshare.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 import java.util.Objects;
 
@@ -11,6 +12,7 @@ public class User {
     @Id
     private String id;
 
+    @Indexed(unique = true)
     private String username;
     private String password;
     private String role; // ROLE_USER or ROLE_DRIVER

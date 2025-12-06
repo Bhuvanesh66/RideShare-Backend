@@ -2,6 +2,7 @@ package org.example.rideshare.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Pattern;
 
 public class RegisterRequest {
 
@@ -14,6 +15,7 @@ public class RegisterRequest {
     private String password;
 
     @NotBlank(message = "Role is required")
+    @Pattern(regexp = "ROLE_USER|ROLE_DRIVER", message = "Role must be either ROLE_USER or ROLE_DRIVER")
     private String role; // ROLE_USER or ROLE_DRIVER
 
     public RegisterRequest() {
